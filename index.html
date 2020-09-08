@@ -4,14 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            background-color: white;
             height: 100vh;
         }
 
@@ -55,20 +50,21 @@
 </head>
 
 <body>
+
+    <button class="btn btn-primary" id="submit" type="submit">Submit</button>
     <div id="surround">
         <div class="box"></div>
     </div>
     <script>
         let box = document.querySelector(".box")
-        let body = document.querySelector("body");
+        let submit = document.querySelector("#submit");
         let surround = document.querySelector("#surround")
-        body.addEventListener("click", runIt);
+        submit.addEventListener("click", runIt);
 
         let random = function () {
-            let res = Math.round(Math.random() * 2000)
-            console.log(res)
-            return res
+            return res = Math.round(Math.random() * 2000)
         }
+
         function runIt() {
             box.style.display = "block"
             surround.style.display = "flex"
