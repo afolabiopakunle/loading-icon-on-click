@@ -64,15 +64,18 @@
         let surround = document.querySelector("#surround")
         body.addEventListener("click", runIt);
 
-
+        let random = function () {
+            let res = Math.round(Math.random() * 2000)
+            console.log(res)
+            return res
+        }
         function runIt() {
             box.style.display = "block"
             surround.style.display = "flex"
             setTimeout(() => {
                 box.style.display = "none"
                 surround.style.display = "none"
-            }, 2500);
-
+            }, random());
         }
     </script>
 </body>
