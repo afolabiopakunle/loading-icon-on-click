@@ -7,11 +7,12 @@ let random = function () {
     return res = Math.round(Math.random() * 2000)
 }
 
-function runIt() {
-    box.style.display = "block"
-    surround.style.display = "flex"
+function runIt(e) {
+    e.preventDefault();
+    box.style.display = "block";
+    surround.style.display = "flex";
     setTimeout(() => {
-        box.style.display = "none"
-        surround.style.display = "none"
+        box.style.display = "none";
+        surround.style.display = "none";
     }, random());
 }
