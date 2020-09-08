@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: white;
+            height: 100vh;
+        }
+
+        .box {
+            border: 5px solid crimson;
+            border-top-color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: circles 1s ease-in-out infinite forwards;
+            display: none;
+
+        }
+
+        @keyframes circles {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        #surround {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.3);
+            top: 0%;
+            bottom: 0%;
+            right: 0%;
+            left: 0%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            display: none;
+        }
+    </style>
+    <title>Loading Circle</title>
+</head>
+
+<body>
+    <div id="surround">
+        <div class="box"></div>
+    </div>
+    <script>
+        let box = document.querySelector(".box")
+        let body = document.querySelector("body");
+        let surround = document.querySelector("#surround")
+        body.addEventListener("click", runIt);
+
+
+        function runIt() {
+            box.style.display = "block"
+            surround.style.display = "flex"
+            setTimeout(() => {
+                box.style.display = "none"
+                surround.style.display = "none"
+            }, 2500);
+
+        }
+    </script>
+</body>
+
+</html>
