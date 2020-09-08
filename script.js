@@ -9,8 +9,8 @@ let random = function () {
 
 function runIt(e) {
     e.preventDefault();
-    box.style.display = "block";
     surround.style.display = "flex";
+    box.style.display = "block";
     setTimeout(() => {
         box.style.display = "none";
         surround.style.display = "none";
